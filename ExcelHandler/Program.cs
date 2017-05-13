@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,14 +16,25 @@ namespace ExcelHandler
         static void Main(string[] args)
         {
 
-            string path = @"D:\test.xlsx";
-            string strCon = "Provider=Microsoft.Ace.OLEDB.12.0;" + "Data Source=" + path + ";" + "Extended Properties=Excel 12.0;";
+            string filePath = @"D:\test.xlsx";
+            string strCon = "Provider=Microsoft.Ace.OLEDB.12.0;" + "Data Source=" + filePath + ";" + "Extended Properties=Excel 12.0;";
+
+            Program.PreProcess(strCon);
+
+        }
+
+        /// <summary>
+        /// Pre 
+        /// </summary>
+        /// <param name="strCon"></param>
+        public static void PreProcess(string strCon)
+        {
             OleDbConnection connection = new OleDbConnection(strCon);
             connection.Open();
             string strExcel = "";
             OleDbDataAdapter adapter = null;
             DataSet ds = null;
-            strExcel = "select * from [Sheet1$]";
+            strExcel = "select top 1000 * from [Sheet1$]";
             adapter = new OleDbDataAdapter(strExcel, strCon);
             ds = new DataSet();
             adapter.Fill(ds, "table1");
@@ -80,7 +92,7 @@ namespace ExcelHandler
             output.Close();
 
             Console.ReadKey();
-
         }
+
     }
 }

@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
-using System.Data.OleDb;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ExcelHandler
 {
-
     /// <summary>
-    /// Preprocessor for handling the excel file
+    /// Interaction logic for App.xaml
     /// </summary>
-    public static class PreProcessor
+    public partial class App : Application
     {
-
-        
-
     }
 }

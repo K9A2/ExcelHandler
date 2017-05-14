@@ -1,0 +1,18 @@
+﻿<Window x:Class="ExcelHandler.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcelHandler"
+        mc:Ignorable="d"
+        Title="数据处理预处理和再处理" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="BtnPreProcess" Content="预处理" Margin="432,40,10,0" VerticalAlignment="Top" Height="25" Click="BtnPreProcess_Click"/>
+        <Button x:Name="BtnReProcess" Content="再处理" Margin="432,80,10,0" VerticalAlignment="Top" Height="25" Click="BtnReProcess_Click"/>
+        <TextBox x:Name="TxtPreProcess" HorizontalAlignment="Left" Height="25" Margin="10,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" VerticalContentAlignment="Center" IsReadOnly="True" GotFocus="TxtPreProcess_GotFocus"/>
+        <TextBox x:Name="TxtReProcess" HorizontalAlignment="Left" Height="25" Margin="10,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410" VerticalContentAlignment="Center" IsReadOnly="True" GotFocus="TxtReProcess_GotFocus"/>
+        <TextBox x:Name="TxtResult" Margin="10,145,10,10" TextWrapping="Wrap" IsReadOnly="True"/>
+        <Label x:Name="LblResult" Content="处理结果" HorizontalAlignment="Left" Margin="10,114.76,0,0" VerticalAlignment="Top" Width="70" Height="25"/>
+
+    </Grid>
+</Window>
